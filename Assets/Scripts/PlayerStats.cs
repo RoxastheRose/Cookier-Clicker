@@ -33,4 +33,10 @@ public class PlayerStats : MonoBehaviour
 
         return result;
     }
+
+    public void TapEnemy()
+    {
+        int goldObtained = (int)(m_baseTapPoints * m_bugBonus);
+        ReceiveGold(goldObtained);
+    }
 }
