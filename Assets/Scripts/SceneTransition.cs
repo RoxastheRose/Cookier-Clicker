@@ -7,6 +7,6 @@ public class SceneTransition : MonoBehaviour
 {
     public void GoToGameScene()
     {
-        SceneManager.LoadScene("Game_Screen");
+        SceneManager.LoadScene("GameScene");
     }
 }
