@@ -9,4 +9,8 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void GoToTitleScene()
+    {
+        SceneManager.LoadScene("GameScreen");
+    }
 }
