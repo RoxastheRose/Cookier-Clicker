@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class PlayerStats : MonoBehaviour
 
     public int m_bugLevel = 1;
     public float m_bugBonus = 1.0f;
+    public Text goldText;
 
+    public void Update()
+    {
+        goldText.text = m_gold.ToString();
+    }
 
     /// <summary>
     /// Increases the player's gold up to their current maximum allowed.
@@ -38,5 +44,10 @@ public class PlayerStats : MonoBehaviour
     {
         int goldObtained = (int)(m_baseTapPoints * m_bugBonus);
         ReceiveGold(goldObtained);
+    }
+
+    public void TapPlayer()
+    {
+        ReceiveGold(m_baseTapPoints);
     }
 }
