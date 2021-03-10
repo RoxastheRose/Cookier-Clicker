@@ -7,6 +7,7 @@ public class AI : MonoBehaviour
 {
     public Vector3 originalPosition;
     public bool clicked;
+    public PlayerStats player;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class AI : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.zero;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         }
         
     }
@@ -34,6 +35,7 @@ public class AI : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        player.TapEnemy();
         clicked = true;
         transform.position = originalPosition;
     }
