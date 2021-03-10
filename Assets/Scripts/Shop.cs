@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
      * 0 >> Bank // Cost = Bank * 0.75 || Increase = Bank + (Bank / 10)^2
      * 1 >> Tap // Cost = (Tap Level + 4)^2 || Increase = Tap + 2
      * 2 >> Bug // Cost = (Tap Level + 4)^2 || Increase = Bug + 0.5
+     * 3 >> Shake // Cost = (Tap Level + 4)^3 || Increase = Shake + 1
     */
 
     public static PlayerStats m_workingPlayer;

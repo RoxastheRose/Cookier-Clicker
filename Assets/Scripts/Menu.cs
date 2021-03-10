@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject player;
+    public GameObject shop;
 
     public void PauseScene()
     {
@@ -18,5 +19,10 @@ public class Menu : MonoBehaviour
         pauseMenu.SetActive(false);
         player.SetActive(true);
         Time.timeScale = 1f;
+    }
+
+    public void toggleShop()
+    {
+        shop.SetActive(!shop.activeInHierarchy);
     }
 }
