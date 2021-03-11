@@ -11,10 +11,10 @@ public class Shop : MonoBehaviour
      * 3 >> Shake // Cost = (Tap Level + 4)^3 || Increase = Shake + 1
     */
 
-    public static PlayerStats m_workingPlayer;
+    [SerializeField] public PlayerStats m_workingPlayer;
     
     // True if able to purchase, false if not.
-    public bool PurchasePowerUp(int powerIndex)
+    public void PurchasePowerUp(int powerIndex)
     {
         bool result = false;
 
@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
                 break;
         }
 
-        return result;
+        //return result;
     }
 
     private bool BankUp()

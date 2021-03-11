@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Update()
     {
-        goldText.text = m_gold.ToString();
+        //goldText.text = m_gold.ToString();
     }
 
     /// <summary>
@@ -49,5 +49,32 @@ public class PlayerStats : MonoBehaviour
     public void TapPlayer()
     {
         ReceiveGold(m_baseTapPoints);
+    }
+
+    public int GetCost(string name)
+    {
+        int result = 0;
+        /*
+         * 0 >> Bank // Cost = Bank * 0.75 || Increase = Bank + (Bank / 10)^2
+         * 1 >> Tap // Cost = (Tap Level + 4)^2 || Increase = Tap + 2
+         * 2 >> Bug // Cost = (Bug Level + 4)^2 || Increase = Bug + 0.5
+         * 3 >> Shake // Cost = (Tap Level + 4)^3 || Increase = Shake + 1
+         */
+        switch (name.ToUpper())
+        {
+            case "BANK":
+                result = (int)(m_bank * 0.75f);
+                break;
+            case "TAP":
+                result = (m_tapLevel + 4) ^ 2;
+                break;
+            case "BUG":
+                result = (m_bugLevel + 4) ^ 2;
+                break;
+            default:
+                break;
+        }
+
+        return result;
     }
 }
